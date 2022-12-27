@@ -1,0 +1,16 @@
+{
+  "domain": "agso_watermeter",
+  "name": "AGSO Knokke-Heist watermeter",
+  "integration_type": "device",
+  "config_flow": true,
+  "documentation": "https://www.home-assistant.io/integrations/agso_watermeter",
+  "requirements": [],
+  "ssdp": [],
+  "zeroconf": [],
+  "homekit": {},
+  "dependencies": [],
+  "codeowners": [
+    "@daanpape"
+  ],
+  "iot_class": "cloud_polling"
+}
