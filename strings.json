@@ -3,8 +3,6 @@
     "step": {
       "user": {
         "data": {
-          "custno": "[%key:common::config_flow::data::custno%]",
-          "subscription": "[%key:common::config_flow::data::subscription%]",
           "username": "[%key:common::config_flow::data::username%]",
           "password": "[%key:common::config_flow::data::password%]"
         }

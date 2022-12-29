@@ -16,31 +16,12 @@ from .agso_cloud import AgsoCloud
 
 _LOGGER = logging.getLogger(__name__)
 
-# TODO adjust the data schema to the data that you need
 STEP_USER_DATA_SCHEMA = vol.Schema(
     {
         vol.Required("username"): str,
         vol.Required("password"): str,
-        vol.Required("custno"): int,
-        vol.Required("subscription"): int,
     }
 )
-
-
-class PlaceholderHub:
-    """Placeholder class to make tests pass.
-
-    TODO Remove this placeholder class and replace with things from your PyPI package.
-    """
-
-    def __init__(self, custno: int, subscription: int) -> None:
-        """Initialize."""
-        self.custno = custno
-        self.subscription = subscription
-
-    async def authenticate(self, username: str, password: str) -> bool:
-        """Test if we can authenticate with the host."""
-        return True
 
 
 async def validate_input(hass: HomeAssistant, data: dict[str, Any]) -> dict[str, Any]:
@@ -49,7 +30,7 @@ async def validate_input(hass: HomeAssistant, data: dict[str, Any]) -> dict[str,
     Data has the keys from STEP_USER_DATA_SCHEMA with values provided by the user.
     """
 
-    agso = AgsoCloud(data["custno"], data["subscription"])
+    agso = AgsoCloud(data["username"], data["password"])
 
     authenticated = False
     try:
